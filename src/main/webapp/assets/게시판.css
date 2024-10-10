@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 헤더 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(211, 201, 248);;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+header .logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.login-btn, .signup-btn {
+  background-color: #fdf9e8;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+/* 사이드바 */
+body {
+  font-family: "KimjungchulGothic-Bold";
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:  rgb(211, 201, 248);;
+  overflow-x: hidden;
+  margin-top: 78px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #363636;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #A9CFE2;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+      padding-top: 15px;
+  }
+
+  .sidenav a {
+      font-size: 18px;
+  }
+}
+/* 사사사사사이이이이드드드바바바바끄트트트 */
+
+#memoir_table{
+    margin : auto;
+    width : 80%;
+    position: relative;
+}
+
+#memoir{
+    margin-bottom: 30px;
+}
+
+#add-button{
+    background-color: #f1f1f1;
+    border-color: #f1f1f1;
+    border: none;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th {
+    border: 2px solid #f1f1f1;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+th{
+    background-color: white;
+}
+
+td{
+    border-bottom: 2px solid #a4a4a4;
+}
+
+#main {
+transition: margin-left .5s;
+padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {
+padding-top: 15px;
+}
+
+.sidenav a {
+font-size: 18px;
+}
+}
+
+/* 말풍선 */
+#add-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 60px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%; /* 버튼 위에 말풍선 위치 */
+    left: 65%;
+    margin-left: -35px; /* 말풍선 중앙 맞추기 */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* 말풍선 아래에 화살표 만들기 */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+

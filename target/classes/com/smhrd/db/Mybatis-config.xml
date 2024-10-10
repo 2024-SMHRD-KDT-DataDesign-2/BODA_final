@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- DB연결을 위한 설정을 지정하는 태그! -->
+<!-- 오류 해결!!! window -> preferences -> xml(WildWebdeveloper) -> download 
+	external resource 체크 -->
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" /> <!-- 드라이버 이름 그대로 넣어주기 -->
+				<property name="url"
+					value="jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe" /> <!-- url, id, pw 넣어주기 -->
+				<property name="username" value="cgi_24k_dd26_p2_3" />
+				<property name="password" value="smhrd3" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- mappers : 사용할 mapper파일을 연결하는 태그! => SQL문장을 가지고 있는 파일! -->
+	<mappers>
+		<mapper resource="com/smhrd/db/ProjectMapper.xml" /> <!-- 얘도 경로 다시 우리에 맞게 지정해줘야함 -->
+		<mapper resource="com/smhrd/db/MemberMapper.xml" />
+		<mapper resource="com/smhrd/db/KanbanMapper.xml" />
+		<mapper resource="com/smhrd/db/Team_organizing.xml" />
+		<mapper resource="com/smhrd/db/memoirMapper.xml" />
+		<!-- mapper 여러개 사용하면서 관리하기도 한다. -->
+
+	</mappers>
+</configuration>

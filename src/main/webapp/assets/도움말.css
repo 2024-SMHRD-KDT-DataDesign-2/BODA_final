@@ -1,0 +1,137 @@
+/* 기본 스타일 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	font-family: "KimjungchulGothic-Bold";
+	background-color: #f1f1f1;
+	height: 100vh; /* 화면 전체 높이를 맞추기 위해 설정 */
+}
+
+/* 헤더 */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #282828;
+}
+
+.header-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+header .logo {
+	font-size: 2em;
+	font-weight: bold;
+	color: #34d4e6;
+}
+
+.login-btn, .signup-btn {
+	background-color: #34d4e6;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+/* -----------------사이드바------------------ */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #282828;
+	overflow-x: hidden;
+	margin-top: 78px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: #A9CFE2;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+#main {
+	transition: margin-left .5s;
+	padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+/* ㅅㅇㄷㅂ끝 */
+.section {
+	margin-bottom: 20px;
+}
+
+.section-title {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+	color: #34d4e6;
+}
+
+.resource-list, .faq-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.resource-list li, .faq-list li {
+	background-color: #f4f4f4;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-left: 5px solid #34d4e6;
+}
+
+.resource-list a, .faq-list a {
+	color: #007acc;
+	text-decoration: none;
+}
+
+.faq-answer {
+	display: none;
+}
+
+.faq-item:hover .faq-answer {
+	display: block;
+}

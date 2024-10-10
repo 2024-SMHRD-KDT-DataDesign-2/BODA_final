@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.MemberMapper">
+
+
+	<!--sql 문장을 태그로 정리할 수 있는 파일 -->
+	<!--회원가입을 위한 sql문장 작성 -->
+	<!--BODA프로젝트회원가입 -->
+	<insert id="join" parameterType="com.smhrd.model.memberDTO">
+		insert into MEMBERS
+		values(#{mem_id},#{mem_pw},#{mem_name},#{mem_nick},#{mem_birthdate},#{mem_email},sysdate)
+	</insert>
+
+	<!--BODA 프로젝트 로그인 -->
+	<select id="login" parameterType="com.smhrd.model.memberDTO"
+		resultType="com.smhrd.model.memberDTO">
+		select * from MEMBERS WHERE mem_id=#{mem_id} and
+		mem_pw=#{mem_pw}
+	</select>
+
+	<!-- ID 조회 -->
+	<select id="idCheck" parameterType="com.smhrd.model.memberDTO"
+		resultType="com.smhrd.model.memberDTO">
+		select * from (select mem_id from members) WHERE
+		mem_id=#{mem_id}
+	</select>
+	<!-- 팀 찾기 조회 -->
+	
+
+
+	<!-- 전체회원조회를 위한 sql문 작성 -->
+	<select id="selectAll" resultType="com.smhrd.model.memberDTO">
+		select email,tel,address from
+		WEB_MEMBER
+
+	</select>
+
+	<!-- 회원정보수정 -->
+	<update id="update" parameterType="com.smhrd.model.memberDTO">
+		UPDATE WEB_MEMBER
+
+		SET
+		pw=#{pw},tel=#{tel},address=#{address} where email=#{email}
+
+
+
+
+	</update>
+
+
+
+</mapper>

@@ -1,0 +1,64 @@
+/* 모달 기본 스타일 */
+.modal {
+	display: none; /* 처음에는 숨김 */
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 10px;
+	width: 50%;
+	max-width: 500px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative; /* 닫기 버튼 위치를 위한 설정 */
+}
+
+/* 닫기 버튼 위치 */
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 28px;
+	cursor: pointer;
+}
+
+/* 유저 아이템 스타일 */
+.user-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+}
+
+/* 승인, 거절 버튼 스타일 */
+.submit-approve-btn, .submit-reject-btn {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: #4b0082;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.submit-reject-btn {
+	background-color: #ff0000;
+}
+
+.submit-approve-btn:hover {
+	background-color: #6a0dad;
+}
+
+.submit-reject-btn:hover {
+	background-color: #ff6666;
+}

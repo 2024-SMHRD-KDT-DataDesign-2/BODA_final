@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.ProjectMapper">
+
+	<!-- 프로젝트생성을 위한 sql 문장 작성 -->
+	<insert id="create" parameterType="com.smhrd.model.projectDTO"> <!-- insert태그 생성하고 그 안에 sql문 작성 -->
+		insert into teams values(#{team_idx}, #{team_name},
+		#{proj_name},#{proj_des}, #{proj_st_dt}, #{proj_ed_dt},
+		#{proj_status}, #{mem_id}) <!-- dto에 있는 필드값들을 연결해줘야함. -> #{} -->
+	</insert>
+	<!-- insert 태그 안에서 ; 쓰지 마라 -->
+	<!-- parameterType 속성에서 가지고올 클래스 ctrl space 눌러서 가져와라 -->
+	<!--team_idx 가져오기 -->
+	<select id="team_idx" parameterType="com.smhrd.model.projectDTO"
+		resultType="String">
+		select team_idx from teams where team_name= #{team_name}
+	</select>
+
+	<!-- 팀 검색 -->
+	<select id="searchProject" parameterType="String"
+		resultType="com.smhrd.model.projectDTO">
+		select * from teams where team_name like #{search_value}
+	</select>
+
+	<!-- 내 프로젝트 조회 -->
+	<select id="selectMyProject"
+		parameterType="com.smhrd.model.memberDTO"
+		resultType="com.smhrd.model.projectDTO">
+		select * from teams
+		<where>
+			team_idx in (select team_idx from team_organizing where mem_id = #{mem_id})
+		</where>
+	</select>
+
+
+	<select id="getProjData" parameterType="String"
+		resultType="com.smhrd.model.projectDTO">
+		select * from teams where proj_name = #{proj_name}
+	</select>
+
+	<insert id="applyTeam"
+		parameterType="com.smhrd.model.team_organizingDTO">
+		insert into team_approve (team_idx, mem_id, approve_dt, mem_role) values
+		(#{team_idx}, #{mem_id}, SYSDATE, #{mem_role})
+
+	</insert>
+
+	<select id="getTeamidxFromTeamapprove" parameterType="String"
+		resultType="com.smhrd.model.team_approveDTO">
+		select * from team_approve where mem_id = #{mem_id}
+	</select>
+
+	<insert id="addTeamOrganizing"
+		parameterType="com.smhrd.model.team_organizingDTO">
+		insert into team_organizing (team_idx, mem_id, created_at, mem_role) values
+		(#{team_idx}, #{mem_id}, sysdate, #{mem_role})
+
+	</insert>
+
+	<delete id="removeTeamApply" parameterType="String">
+		delete from team_approve where mem_id = #{mem_id}
+	</delete>
+
+
+
+</mapper>

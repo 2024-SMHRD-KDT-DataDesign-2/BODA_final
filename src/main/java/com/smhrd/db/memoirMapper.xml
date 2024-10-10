@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.memoirMapper">
+
+
+<insert id="memoirs" parameterType="com.smhrd.model.memoirDTO">
+        INSERT INTO memoirs (TEAM_IDX,MEM_ID,MEMOIR_NAME,MEMOIR_INFO,MEMOIR_INFO1,MEMOIR_INFO2,MEMOIR_DATE)
+        VALUES (#{team_idx}, #{mem_id}, #{memoir_name}, #{memoir_info}, #{memoir_info1}, #{memoir_info2}, SYSDATE)
+    </insert>
+    
+   <select id="getMemoirList" resultType="com.smhrd.model.memoirDTO">
+    SELECT * FROM memoirs
+</select>
+
+<update id="memoirupdate" parameterType="com.smhrd.model.memoirDTO" >
+	update MEMOIRS set memoir_name=#{memoir_name}, memoir_info=#{memoir_info}, memoir_info1=#{memoir_info1}, memoir_info2=#{memoir_info2} where memoir_idx=#{memoir_idx}
+	</update>
+
+
+    
+
+
+</mapper>

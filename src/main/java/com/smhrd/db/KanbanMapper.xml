@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.KanbanMapper">
+
+	<!-- 칸반에 데이터 추가 -->
+	<insert id="kanbanin" parameterType="com.smhrd.model.KanbanDTO">
+		insert into kanbans
+		values(#{kanban_idx},#{team_idx},#{task_name},#{task_info},#{task_progress},#{task_st_dt},#{task_ed_dt},#{task_file1},#{task_file2},#{task_file3},#{kanban_color},#{task_importance},#{mem_id})
+	</insert>
+
+	<!-- 칸반 데이터 조회 -->
+	<select id="select_kanban" parameterType="int" resultType="com.smhrd.model.KanbanDTO">
+		select * from kanbans where team_idx=#{team_idx}
+	</select>
+
+	<!-- 칸반 전체 데이터 조회 -->
+	<select id="select_kanbanall" resultType="com.smhrd.model.KanbanDTO">
+		select * from kanbans
+	</select>
+	
+	<!-- 칸반 업무이름,시작날짜,종료날짜, 업무내용 데이터 조회 -->
+	<select id="select_kanban1" parameterType="int" resultType="com.smhrd.model.KanbanDTO">
+		select * from kanbans where team_idx = #{team_idx}
+	</select>
+	<!-- 칸반 수정 -->
+	<update id="kanbanupdate" parameterType="com.smhrd.model.KanbanDTO" >
+	update kanbans set task_name=#{task_name}, task_info=#{task_info}, task_progress=#{task_progress}, task_importance=#{task_importance} where kanban_idx=#{kanban_idx}
+	</update>
+	
+	<!-- 칸반 삭제 -->
+	<delete id="kanbandelete" parameterType="com.smhrd.model.KanbanDTO">
+	delete kanbans where kanban_idx=#{kanban_idx}
+	</delete>
+
+
+
+</mapper>

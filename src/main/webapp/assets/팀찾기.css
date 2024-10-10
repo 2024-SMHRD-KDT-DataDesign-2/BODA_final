@@ -1,0 +1,101 @@
+body {
+	background: #282828;
+	font-family: 'LINESeedKR-Bd';
+}
+
+input {
+    font-family: 'LINESeedKR-Bd';
+    font-size: 16px;
+    width: 325px;
+    padding: 10px;
+    border: 0;
+    outline: none;
+    float: left;
+}
+
+#apply{
+	border-radius: 15px;
+	font-size: 15px;
+}
+button {
+    width: 50px;
+    height: 100%;
+    border: 0;
+    background-color: #34d4e6;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+	
+/*** 로고 ***/
+#BODA {
+    position: absolute;
+    left: 43%;
+    width: 250px;
+    height: 250px;
+}
+
+.green_window {
+    display: inline-block;
+    width: 540px;
+    height: 47px;
+    border: 3px solid #34d4e6;
+    background-color: #fff;
+    border-radius: 15px;
+    position: relative;
+}
+
+.input_text {
+    font-family: 'LINESeedKR-Bd', sans-serif;
+    width: 490px;
+    height: 18px;
+    margin: 6px 0 0 9px;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+}
+
+.sch_smit {
+    font-family: 'LINESeedKR-Bd', sans-serif;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 550px;
+    bottom: 45px;
+    background-color: #34d4e6;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.sch_smit:hover {
+    background-color: #34d4e6;
+}
+
+table {
+    font-family: 'LINESeedKR-Bd';
+    width: 600px;
+    height: 40px;
+    border: 3px solid #34d4e6;
+    background-color: #fff;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#login {
+    box-shadow: 2px 2px 2px rgb(230, 230, 230);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 58%;
+    max-width: 600px;
+    height: 500px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    overflow-y: auto;
+}

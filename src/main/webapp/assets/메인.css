@@ -1,0 +1,178 @@
+/* 헤더 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #282828;
+}
+
+.header-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+header .logo {
+	font-size: 2em;
+	font-weight: bold;
+	color: #34d4e6;
+}
+
+.login-btn, .signup-btn {
+	background-color: #34d4e6;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.container {
+	display: flex;
+}
+
+.content {
+	flex: 1;
+	padding: 20px;
+}
+
+.cards {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
+	border: 10px;
+}
+
+.card {
+	background-color: #FFEB84;
+	padding: 20px;
+	width: 200px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#card {
+	height: 100px;
+	width: 250px;
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #f9f0c3;
+	border-left-width: 20px;
+	border-radius: 5px;
+	padding: 15px;
+	border-left-style: solid;
+	font-size: .9rem;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.status {
+	align-self: flex-end;
+}
+
+.calendar {
+	padding-top: 300px;
+	margin-left: 200px;
+}
+
+.chat-box {
+	margin-top: 0px;
+	margin-left: 600px;
+}
+
+.chat-box textarea {
+	width: 800px;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.chat-box button {
+	/*   background-color: #fdf9e8;*/
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* -----------------사이드바------------------ */
+body {
+	font-family: "KimjungchulGothic-Bold";
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #282828;
+	overflow-x: hidden;
+	margin-top: 78px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: #A9CFE2;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+#main {
+	transition: margin-left .5s;
+	padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+/* ------------------사이드바 끝-------------------- */
+/* 캘린더 헤더 스타일 */
+.fc-header-toolbar {
+	padding: 1em;
+}
+
+/* 캘린더 위치 및 크기 조정 */
+#calendar {
+	position: absolute;
+	left: 280px;
+	top: 400px; 
+	width: 1200px;
+	height: 500px;
+}

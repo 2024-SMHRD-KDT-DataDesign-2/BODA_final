@@ -1,0 +1,105 @@
+/* 전체 기본 스타일 */
+body{
+	position: relative;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+/* 헤더 스타일 */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #282828;
+}
+
+.header-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+header .logo {
+	font-size: 2em;
+	font-weight: bold;
+	color: #34d4e6;
+}
+
+.login-btn, .signup-btn {
+	background-color: #34d4e6;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+/* 사이드바 */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #282828;
+	overflow-x: hidden;
+	margin-top: 78px;
+}
+
+.sidenav a {
+	padding: 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #A9CFE2;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+#main {
+	transition: margin-left 0.5s;
+	padding: 16px;
+}
+
+/* 반응형 사이드바 */
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+
+/* 캘린더 헤더 스타일 */
+.fc-header-toolbar {
+	padding: 1em;
+}
+
+
+/* 캘린더 위치 및 크기 조정 */
+#calendar {
+	position: absolute;
+	left: 400px;
+	top: 150px;
+	width: 1200px;
+	height: 800px;
+}
+
+

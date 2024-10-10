@@ -1,0 +1,298 @@
+#wow {
+	margin-left: 15%;
+}
+
+/* Panels */
+.panel {
+	text-align: end;
+	background: white;
+	border-radius: 15px;
+	border: 2px solid #DADADA;
+	position: absolute;
+	width: 400px;
+	height: 295px;
+	overflow-y: auto;
+}
+
+.panel h2 {
+	text-align: center;
+	padding-top: 10px;
+}
+
+/* Panel positioning */
+#panel-todo {
+	right: 1230px;
+	margin-bottom: 550px;
+	overflow-y: auto;
+}
+
+#panel-inprogress {
+	right: 820px;
+	margin-bottom: 550px;
+	overflow-y: auto;
+}
+
+#panel-done {
+	right: 408px;
+	margin-bottom: 550px;
+	overflow-y: auto;
+}
+
+/* Add Button */
+#adicionar {
+	color: white;
+	background: #13C820;
+	border: none;
+	border-radius: 5px;
+	margin-bottom: 100px;
+	font-size: 32px;
+	width: 300px;
+	height: 42px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#adicionar:hover {
+	background: #1DD22A;
+}
+
+#adicionar:active {
+	background: #03BD10;
+}
+
+/* Modal form for adding tasks */
+keyframes animate {from { opacity:0;
+	
+}
+
+to {
+	opacity: 1;
+}
+
+}
+.form-adicionar {
+	padding: 20px 15px 15px 15px;
+	background: #FDFDFD;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #E0E0E0;
+	border-width: 1px;
+	width: 650px;
+	height: 480px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	animation: animate;
+	animation-duration: 700ms;
+}
+
+.fundo-escurecido {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.65);
+	position: relative;
+	display: none;
+	animation: animate;
+	animation-duration: 200ms;
+}
+
+::placeholder {
+	font-style: italic;
+}
+
+/* Text field */
+.subtitulo {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#adicionar-tarefa input[type=text] {
+	width: 95%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+}
+
+#adicionar-tarefa input[type=text]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Radio buttons */
+#adicionar-tarefa input[type=radio] {
+	display: none;
+}
+
+.labelradio {
+	color: #555;
+	text-align: center;
+	font-weight: 550;
+	padding: 5px;
+	width: 70px;
+	margin-right: 6px;
+	border: 2px solid transparent;
+	border-radius: 17px 17px 17px 17px;
+	font-family: "Arial", sans-serif;
+	cursor: pointer;
+	font-size: 14px;
+	display: inline-block;
+	background-color: #F2F2F2;
+	transition: border 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.labelradio:hover {
+	border: 2px solid #13C820;
+}
+
+#adicionar-tarefa input[type=radio]:checked+.labelradio {
+	background-color: #13C820;
+	border: 2px solid #13C820;
+	color: white;
+}
+
+/* Text area */
+#adicionar-tarefa textarea {
+	width: 95%;
+	height: 100px;
+	padding: 15px;
+	resize: none;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+	font-family: arial;
+}
+
+#adicionar-tarefa textarea:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Primary button */
+#adicionar-tarefa .btn {
+	background-color: #13C820;
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	padding: 13px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100px;
+	float: right;
+	opacity: 0.8;
+	transition: opacity 0.3s;
+	transform: translatey(125px);
+}
+
+#adicionar-tarefa .btn:hover {
+	opacity: 1;
+}
+
+#adicionar-tarefa .btn:active {
+	position: relative;
+	top: 2px;
+}
+
+/* Secondary button */
+#adicionar-tarefa .cancel {
+	background-color: #FFF;
+	font-weight: bold;
+	font-size: 15px;
+	color: #13C820;
+	padding: 13px 15px;
+	border: 1px solid #13C820;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100px;
+	margin-right: 10px;
+	float: right;
+	transition: background-color 0.3s;
+	transform: translatey(125px);
+}
+
+#adicionar-tarefa .cancel:hover {
+	background-color: #f1f1f1;
+}
+
+#adicionar-tarefa .cancel:active {
+	position: relative;
+	top: 2px;
+}
+
+/* Tertiary button */
+#adicionar-tarefa .delete {
+	background-color: #FFF;
+	font-weight: bold;
+	font-size: 15px;
+	color: red;
+	padding: 13px 15px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100px;
+	margin-right: 10px;
+	float: left;
+	transition: border 0.3s;
+	transform: translate(-265px, 125px);
+}
+
+#adicionar-tarefa .delete:hover {
+	border: 1px solid red;
+}
+
+#adicionar-tarefa .delete:active {
+	position: relative;
+	top: 2px;
+}
+
+/* 'Required Field' form notice */
+.instrucao {
+	font-size: 13px;
+	font-style: italic;
+	color: #353535;
+	align-items: center;
+	display: inline-block;
+	position: absolute;
+	transform: translate(-270px, 50px)
+}
+
+.instrucao::before {
+	content: "*";
+	font-size: 24px;
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+/* Task card */
+.card{
+	font-size: 18px;
+	text-align: left;
+	width: 380px;
+	height: 50px;
+	padding: 5px;
+	border-radius: 5px;
+	margin-top: 10px;
+	border: 1px solid #DADADC;
+	background-color: #F6F8FA;
+	display: inline-block;
+	position: relative;
+	right: 8px;
+}
+
+
+/* Use the class below to hide excess characters */
+.card-text {
+	position: relative;
+	top: 50%;
+	transform: translate(0, -50%);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: auto;
+	max-width: 93ch;
+}
